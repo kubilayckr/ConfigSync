@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "88d9b50e-6505-4e38-8e77-4e318123d483",
+		"name": "ConfigSync",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43579947"
+	},
+	"item": [
+		{
+			"name": "Configuration",
+			"item": [
+				{
+					"name": "AddConfiguration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseText = pm.response.text();\r",
+									"pm.globals.set(\"configId\", responseText.trim());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actions\": [\r\n        {\r\n            \"type\": \"remove\",\r\n            \"selector\": \".ad-banner\"\r\n        },\r\n        {\r\n            \"type\": \"replace\",\r\n            \"selector\": \"#old-header\",\r\n            \"newElement\": \"<header id='new-header'>New Header</header>\"\r\n        },\r\n        {\r\n            \"type\": \"insert\",\r\n            \"position\": \"after\",\r\n            \"target\": \"body\",\r\n            \"element\": \"<footer>Footer Content</footer>\"\r\n        },\r\n        {\r\n            \"type\": \"alter\",\r\n            \"oldValue\": \"Machine Learning\",\r\n            \"newValue\": \"AI\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/configurations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/configurations/{{configId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"configurations",
+								"{{configId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/configurations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllConfigurationIds",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/configurations/config-ids",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"configurations",
+								"config-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actions\": [\r\n        {\r\n            \"type\": \"remove\",\r\n            \"selector\": \".ad-banner7\"\r\n        },\r\n        {\r\n            \"type\": \"replace\",\r\n            \"selector\": \"#old-header\",\r\n            \"newElement\": \"<header id='new-header'>New Header</header>\"\r\n        },\r\n        {\r\n            \"type\": \"insert\",\r\n            \"position\": \"after\",\r\n            \"target\": \"body\",\r\n            \"element\": \"<footer>Footer Content</footer>\"\r\n        },\r\n        {\r\n            \"type\": \"alter\",\r\n            \"oldValue\": \"Machine Learning\",\r\n            \"newValue\": \"AI\"\r\n        },\r\n        {\r\n            \"type\": \"alter\",\r\n            \"oldValue\": \"ML\",\r\n            \"newValue\": \"AI\"\r\n        },\r\n        {\r\n            \"type\": \"remove\",\r\n            \"selector\": \".ad-banner3\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/configurations/{{configId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"configurations",
+								"{{configId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/configurations/{{configId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"configurations",
+								"{{configId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Specific Configuration",
+			"item": [
+				{
+					"name": "AddSpecificConfiguration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseText = pm.response.text();\r",
+									"pm.globals.set(\"specificConfigId\", responseText.trim());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"datasource\": {\r\n        \"pages\": {\r\n            \"list\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ],\r\n            \"details\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ],\r\n            \"cart\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\",\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ]\r\n        },\r\n        \"urls\": {\r\n            \"/products\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ],\r\n            \"/orders\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ]\r\n        },\r\n        \"hosts\": {\r\n            \"example.com\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ],\r\n            \"another.com\": [\r\n                \"1eccb36e-8ec6-401d-8fc9-d4bdab46eba8\"\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSpecificConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations/{{specificConfigId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations",
+								"{{specificConfigId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllSpecificConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllSpecificConfigurationIds",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations/specific-config-ids",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations",
+								"specific-config-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllSpecificConfigsByPageAndUrlAndHost",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations/specific?page=details&url=/orders&host=example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations",
+								"specific"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "details"
+								},
+								{
+									"key": "url",
+									"value": "/orders"
+								},
+								{
+									"key": "host",
+									"value": "example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSpecificConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actions\": [\r\n        {\r\n            \"type\": \"remove\",\r\n            \"selector\": \".ad-banner\"\r\n        },\r\n        {\r\n            \"type\": \"replace\",\r\n            \"selector\": \"#old-header\",\r\n            \"newElement\": \"<header id='new-header'>New Header</header>\"\r\n        },\r\n        {\r\n            \"type\": \"insert\",\r\n            \"position\": \"after\",\r\n            \"target\": \"body\",\r\n            \"element\": \"<footer>Footer Content</footer>\"\r\n        },\r\n        {\r\n            \"type\": \"alter\",\r\n            \"oldValue\": \"Machine Learning\",\r\n            \"newValue\": \"AI\"\r\n        },\r\n        {\r\n            \"type\": \"alter\",\r\n            \"oldValue\": \"ML\",\r\n            \"newValue\": \"AI\"\r\n        },\r\n        {\r\n            \"type\": \"remove\",\r\n            \"selector\": \".ad-banner3\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations/{{specificConfigId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations",
+								"{{specificConfigId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSpecificConfiguration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/specific-configurations/{{specificConfigId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"specific-configurations",
+								"{{specificConfigId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "configId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "specificConfigId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
