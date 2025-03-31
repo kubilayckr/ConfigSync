@@ -1,0 +1,19 @@
+datasource:
+  pages:
+    list:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+    details:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+    cart:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+  urls:
+    /products:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+    /orders:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+  hosts:
+    example.com:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"
+    another.com:
+      - "70fc3fee-622a-4853-b165-e6355dd24141"

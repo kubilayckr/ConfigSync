@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ConfigSync
+
+server:
+  port: 8080
+
+appConfig:
+  filePaths:
+    configPath: "src/main/resources/configurations/"
+    specificConfigPath: "src/main/resources/specific_configurations/"

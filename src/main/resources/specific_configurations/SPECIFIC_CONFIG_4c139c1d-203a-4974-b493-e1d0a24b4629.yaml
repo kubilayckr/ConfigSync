@@ -1,0 +1,19 @@
+datasource:
+  pages:
+    list:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+    details:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+    cart:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+  urls:
+    /products:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+    /orders:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+  hosts:
+    example.com:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
+    another.com:
+      - "1eccb36e-8ec6-401d-8fc9-d4bdab46eba8"
